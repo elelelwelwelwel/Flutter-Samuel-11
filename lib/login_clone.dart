@@ -34,7 +34,7 @@ class _LoginCloneState extends State<LoginClone> {
               margin: EdgeInsets.all(10),
               child: CustomTextField(
                 txtController: txtusername,
-                hint: "input username",
+                myHint: "input username",
               ),
             ),
 
@@ -42,7 +42,7 @@ class _LoginCloneState extends State<LoginClone> {
               margin: EdgeInsets.all(10),
               child: CustomTextField(
                 txtController: txtpassword,
-                hint: "input password",
+                myHint: "input password",
               ),
             ),
 
@@ -51,15 +51,7 @@ class _LoginCloneState extends State<LoginClone> {
               width: double.infinity,
               child: CustomButton(
                 text: 'Login',
-                onPressed: () {
-                  String username = txtusername.text.toString();
-                  String password = txtpassword.text.toString();
-                  if (username == "admin" && password == "admin") {
-                    print("Login Success");
-                  } else {
-                    print("Login Failed");
-                  }
-                },
+                onPressed: () {},
               ),
             ),
           ],

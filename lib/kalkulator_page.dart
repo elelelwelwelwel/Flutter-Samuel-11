@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:fluttertest/controller/kalkulator_controller.dart';
 
 class KalkulatorPage extends StatefulWidget {
-  const KalkulatorPage({super.key});
+  KalkulatorPage({super.key});
+
+  final controller = Get.put(KalkulatorController());
 
   @override
   State<KalkulatorPage> createState() => _KalkulatorPageState();
@@ -10,6 +14,8 @@ class KalkulatorPage extends StatefulWidget {
 class _KalkulatorPageState extends State<KalkulatorPage> {
   @override
   Widget build(BuildContext context) {
+    final TextEditingController txtAngka1 = TextEditingController();
+    final TextEditingController txtAngka2 = TextEditingController();
     return Scaffold(
       appBar: AppBar(title: Text("ini adalah kalkulator")),
       body: Column(
@@ -48,7 +54,14 @@ class _KalkulatorPageState extends State<KalkulatorPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(onPressed: () {}, child: Text("+")),
+                ElevatedButton(
+                  onPressed: () {
+                    int angka1 = int.parse(txtAngka1.text);
+                    int angka2 = int.parse(txtAngka2.text);
+                    widget.controller.tambah(angka1, angka2);
+                  },
+                  child: Text("+"),
+                ),
                 ElevatedButton(onPressed: () {}, child: Text("-")),
                 ElevatedButton(onPressed: () {}, child: Text("x")),
                 ElevatedButton(onPressed: () {}, child: Text("/")),

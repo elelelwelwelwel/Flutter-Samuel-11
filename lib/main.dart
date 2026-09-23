@@ -3,6 +3,7 @@ import 'package:fluttertest/login_page.dart';
 import 'package:fluttertest/kalkulator_page.dart';
 import 'package:fluttertest/login_clone.dart';
 import 'package:fluttertest/pages/login_clone_page.dart';
+import 'package:fluttertest/pages/calculator_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
       // home: LoginPage(),
-      home: LoginClonePage(),
+      home: CalculatorPage(),
     );
   }
 }

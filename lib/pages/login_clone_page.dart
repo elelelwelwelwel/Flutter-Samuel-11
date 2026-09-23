@@ -18,14 +18,14 @@ class LoginClonePage extends StatelessWidget {
               margin: const EdgeInsets.all(10),
               child: CustomTextField(
                 txtController: TextEditingController(),
-                hint: "input username",
+                myHint: "input username",
               ),
             ),
             Container(
               margin: const EdgeInsets.all(10),
               child: CustomTextField(
                 txtController: TextEditingController(),
-                hint: "input password",
+                myHint: "input password",
               ),
             ),
             Container(

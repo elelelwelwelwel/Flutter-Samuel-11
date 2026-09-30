@@ -20,30 +20,35 @@ class ConfirmRegPage extends StatelessWidget {
               style: TextStyle(fontSize: 25, color: Colors.blue),
             ),
             Text(
-              "Jenis Kelamin: ${controller.jenisKelamin}",
+              "Jenis Kelamin ${controller.jenisKelamin}",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 20, color: Colors.blue),
             ),
             Text(
-              "Alamat: ${controller.alamat}",
+              "Alamat ${controller.alamat}",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 20, color: Colors.blue),
             ),
             Text(
-              "Email: ${controller.email}",
+              "Email ${controller.email}",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 20, color: Colors.blue),
             ),
             Text(
-              "No WA: ${controller.noWa}",
+              "No WA ${controller.noWa}",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 20, color: Colors.blue),
             ),
-            ElevatedButton(
-              onPressed: () {
-                Get.back();
-              },
-              child: Text("Oke"),
+
+            Container(
+              margin: const EdgeInsets.all(10),
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  Get.back();
+                },
+                child: Text("Oke"),
+              ),
             ),
           ],
         ),

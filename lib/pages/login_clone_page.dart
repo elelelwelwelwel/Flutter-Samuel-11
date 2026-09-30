@@ -28,11 +28,7 @@ class LoginClonePage extends StatelessWidget {
                 myHint: "input password",
               ),
             ),
-            Container(
-              margin: const EdgeInsets.all(10),
-              width: double.infinity,
-              child: CustomButton(text: 'Login', onPressed: () {}),
-            ),
+            
           ],
         ),
       ),

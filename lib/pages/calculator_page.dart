@@ -66,7 +66,7 @@ class CalculatorPage extends StatelessWidget {
               ),
             ],
           ),
-
+      
           ElevatedButton(
             onPressed: () {
               txtAngka1.clear();

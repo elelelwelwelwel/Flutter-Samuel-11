@@ -10,7 +10,7 @@ class ConfirmRegPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Confirm Registration Page")),
+      appBar: AppBar(title: Text("Confirm Registration")),
       body: Center(
         child: Column(
           children: [

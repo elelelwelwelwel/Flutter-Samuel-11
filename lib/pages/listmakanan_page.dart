@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertest/controller/listmakanan_controller.dart';
-import 'package:fluttertest/pages/detailmakanan_page.dart';
+import 'package:fluttertest/routes.dart';
 import 'package:get/get.dart';
 
 class ListMakananPage extends StatelessWidget {
   ListMakananPage({super.key});
-
   final controller = Get.put(ListMakananController());
 
   @override
@@ -18,26 +17,39 @@ class ListMakananPage extends StatelessWidget {
           itemCount: controller.listMakanan.length,
           itemBuilder: (context, index) {
             final makanan = controller.listMakanan[index];
-            return InkWell(
-              onTap: () {
-                Get.to(
-                  () => const DetailMakananPage(),
-                  arguments: makanan,
-                );
-              },
-              child: Card(
-                elevation: 5,
-                child: Container(
-                  margin: EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(makanan.namaMakanan, style: TextStyle(fontSize: 20)),
-                      Text(
-                        "Rp." + makanan.hargaMakanan,
-                        style: TextStyle(fontSize: 10),
+            return Dismissible(
+              key: ValueKey(makanan.namaMakanan),
+              direction: DismissDirection.endToStart,
+              background: Container(
+                color: Colors.red,
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.only(left: 20),
+                child: Icon(Icons.delete, color: Colors.white),
+              ),
+              child: InkWell(
+                onTap: () {
+                  Get.toNamed(Routes.detail_makanan, arguments: makanan);
+                },
+                child: Card(
+                  elevation: 5,
+                  child: SizedBox(
+                    width: 500,
+                    child: Container(
+                      margin: EdgeInsets.all(20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            makanan.namaMakanan,
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          Text(
+                            "Rp." + makanan.hargaMakanan,
+                            style: TextStyle(fontSize: 10),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ),

@@ -21,11 +21,9 @@ class MyApp extends StatelessWidget {
       title: 'My Learning App',
       initialRoute: Routes.list_makanan,
       getPages: Routes.myPages,
-      
 
       // home: LoginPage(),
       // home: CalculatorPage(),
-
     );
   }
 }

@@ -1,54 +1,59 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertest/models/makanan_model.dart';
+import 'package:fluttertest/controller/detailmakanan_controller.dart';
 import 'package:get/get.dart';
 
 class DetailMakananPage extends StatelessWidget {
-  const DetailMakananPage({super.key});
+  DetailMakananPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Mengambil data MakananModel yang dikirim dari ListMakananPage
-    final MakananModel makanan = Get.arguments;
+    final controller = Get.put(DetailMakananController());
 
     return Scaffold(
-      appBar: AppBar(title: Text(makanan.namaMakanan)),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
+      appBar: AppBar(title: Text(controller.makanan.namaMakanan)),
+      body: Container(
+        margin: EdgeInsets.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Center(
               child: Image.network(
-                makanan.gambarMakanan,
+                controller.makanan.gambarMakanan,
                 width: 200,
                 height: 200,
               ),
             ),
-            const SizedBox(height: 20),
-            Text(makanan.namaMakanan, style: const TextStyle(fontSize: 24)),
-            const SizedBox(height: 8),
+            SizedBox(height: 20),
             Text(
-              "Rp ${makanan.hargaMakanan}",
-              style: const TextStyle(fontSize: 18),
+              controller.makanan.namaMakanan,
+              style: TextStyle(fontSize: 24),
             ),
-            const SizedBox(height: 16),
-            const Text("Deskripsi:", style: TextStyle(fontSize: 16)),
+            SizedBox(height: 8),
             Text(
-              makanan.deskripsiMakanan,
-              style: const TextStyle(fontSize: 14),
+              "Rp ${controller.makanan.hargaMakanan}",
+              style: TextStyle(fontSize: 18),
             ),
-            const SizedBox(height: 16),
+            SizedBox(height: 16),
+            Text("Deskripsi:", style: TextStyle(fontSize: 16)),
+            Text(
+              controller.makanan.deskripsiMakanan,
+              style: TextStyle(fontSize: 14),
+            ),
+            SizedBox(height: 16),
             Row(
               children: [
                 Text(
-                  "Rating: ${makanan.rating}",
-                  style: const TextStyle(fontSize: 16),
+                  "Rating: ${controller.makanan.rating}",
+                  style: TextStyle(fontSize: 16),
                 ),
               ],
             ),
-            const SizedBox(height: 16),
-            const Text("Review:", style: TextStyle(fontSize: 16)),
-            Text(makanan.reviewMakanan, style: const TextStyle(fontSize: 14)),
+            SizedBox(height: 16),
+            Text("Review:", style: TextStyle(fontSize: 16)),
+            Text(
+              controller.makanan.reviewMakanan,
+              style: TextStyle(fontSize: 14),
+            ),
           ],
         ),
       ),

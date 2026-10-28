@@ -5,44 +5,6 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(backgroundColor: Colors.white, elevation: 0),
-      body: ListView(
-        padding: EdgeInsets.all(16.0),
-        children: [
-          // Foto Profil Lingkaran Polos
-          Center(
-            child: CircleAvatar(
-              radius: 50,
-              backgroundColor: Colors.grey,
-              child: Icon(Icons.person, size: 50, color: Colors.white),
-            ),
-          ),
-          SizedBox(height: 24),
-
-          // Kerangka List Menu Profil
-          ListTile(
-            leading: Icon(Icons.person),
-            title: Text("Nama"),
-            subtitle: Text("Samuel Prasta"),
-            onTap: () {},
-          ),
-
-          ListTile(
-            leading: const Icon(Icons.info),
-            title: const Text("Tentang"),
-            subtitle: const Text("Available"),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.phone),
-            title: const Text("Telepon"),
-            subtitle: const Text("+62 857-2888-8462"),
-            onTap: () {},
-          ),
-        ],
-      ),
-    );
+    return const Scaffold(body: Center(child: Text("Ini Profile Page"),));
   }
 }

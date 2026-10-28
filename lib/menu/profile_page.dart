@@ -11,7 +11,6 @@ class ProfilePage extends StatelessWidget {
       body: ListView(
         padding: EdgeInsets.all(16.0),
         children: [
-          // Foto Profil Lingkaran Polos
           Center(
             child: CircleAvatar(
               radius: 50,
@@ -20,15 +19,12 @@ class ProfilePage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 24),
-
-          // Kerangka List Menu Profil
           ListTile(
             leading: Icon(Icons.person),
             title: Text("Nama"),
             subtitle: Text("Samuel Prasta"),
             onTap: () {},
           ),
-
           ListTile(
             leading: const Icon(Icons.info),
             title: const Text("Tentang"),

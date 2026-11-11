@@ -7,6 +7,7 @@ import 'package:fluttertest/pages/calculator_page.dart';
 import 'package:fluttertest/pages/menu_drawer_page.dart';
 import 'package:fluttertest/routes.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get_navigation/src/routes/get_route.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'My Learning App',
-      initialRoute: Routes.menu_drawer,
+      initialRoute: Routes.login_clone,
       getPages: Routes.myPages,
 
       // debugShowCheckedModeBanner: false,

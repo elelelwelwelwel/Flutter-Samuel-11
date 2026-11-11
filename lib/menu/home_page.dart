@@ -11,42 +11,63 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('')),
       body: Container(
-        margin: EdgeInsets.all(10),
-        child: SizedBox(
-          height: 150,
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: controller.listMakanan.length,
-          itemBuilder: (context, index) {
-            final makanan = controller.listMakanan[index];
-              return InkWell(
-                onTap: () {},
-                child: Card(
-                  elevation: 5,
-                  child: SizedBox(
-                    width: 200,
-                    child: Container(
-                      margin: EdgeInsets.all(20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            makanan.namaMakanan,
-                            style: TextStyle(fontSize: 20),
-                          ),
-                          Text(
-                            "Rp." + makanan.hargaMakanan,
-                            style: TextStyle(fontSize: 10),
-                          ),
-                        ],
+        margin: const EdgeInsets.all(10),
+        child: Obx(() {
+          final teamsList = controller.listModel.value?.teams;
+
+          if (teamsList == null || teamsList.isEmpty) {
+            return Center(child: Text("Tidak ada data tim."));
+          }
+
+          return SizedBox(
+            height: 150,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: teamsList.length,
+              itemBuilder: (context, index) {
+                final team = teamsList[index];
+
+                final teamName = team['strTeam'];
+                final stadiumName = team['strStadium'];
+
+                return InkWell(
+                  onTap: () {},
+                  child: Card(
+                    elevation: 5,
+                    child: SizedBox(
+                      width: 200,
+                      child: Container(
+                        margin: EdgeInsets.all(20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              teamName!,
+                              style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            SizedBox(height: 8),
+                            Text(
+                              "Stadion: $stadiumName",
+                              style: TextStyle(fontSize: 12),
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              );
-            },
-          ),
-        ),
+                );
+              },
+            ),
+          );
+        }),
       ),
     );
   }

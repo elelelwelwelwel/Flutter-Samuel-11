@@ -34,12 +34,14 @@ class LoginClonePage extends StatelessWidget {
             ),
 
             Obx(
-              () => controller.isLoading.value ? Center(child: CircularProgressIndicator(),) : OutlinedButton(
-                onPressed: () {
-                  controller.login();
-                },
-                child: Text("Login"),
-              ),
+              () => controller.isLoading.value
+                  ? Center(child: CircularProgressIndicator())
+                  : OutlinedButton(
+                      onPressed: () {
+                        controller.login();
+                      },
+                      child: Text("Login"),
+                    ),
             ),
           ],
         ),

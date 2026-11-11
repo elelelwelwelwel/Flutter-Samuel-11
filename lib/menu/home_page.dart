@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
           final teamsList = controller.listModel.value?.teams;
 
           if (teamsList == null || teamsList.isEmpty) {
-            return Center(child: Text("Tidak ada data tim."));
+            return Center(child: Text(" "));
           }
 
           return SizedBox(
@@ -48,8 +48,6 @@ class HomePage extends StatelessWidget {
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
                               ),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
                             ),
                             SizedBox(height: 8),
                             Text(

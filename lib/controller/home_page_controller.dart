@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:fluttertest/models/list_model.dart'; // Sesuaikan path model kamu
+import 'package:fluttertest/models/list_model.dart';
 
 class HomePageController extends GetxController {
   var isLoading = false.obs;
